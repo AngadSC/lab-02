@@ -88,12 +88,26 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
+// shows the thing at the bottom where we can actually write new city
         but_add_city.setOnClickListener(v -> {
             add_panel.setVisibility(View.VISIBLE);
+            edit_name_city.setText("");
+            edit_name_city.requestFocus();
+
 
         });
+        confirm_button.setOnClickListener(v -> {
+            String name = edit_name_city.getText().toString().trim();
+            if (name.isEmpty()) {
+                edit_name_city.setError("Enter city name");
+                return;
 
+            }
+            dataList.add(new City(name));
+            cityAdapter.notifyDataSetChanged();
+
+            add_panel
+        });
     }
 
     // we get the buttons that are added from the mainactivity first of all
