@@ -1,7 +1,10 @@
 package com.example.cmput301lab2;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,8 +18,13 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
     ListView cityList;
-    ArrayAdapter<String> cityAdapter;
-    ArrayList<String> dataList;
+    ArrayAdapter<City> cityAdapter;
+    ArrayList<City> dataList;
+
+    int selectedPosition = -1;
+    Button addCityBut;
+    Button deleteCityBut;
+
 
 
     @Override
@@ -25,10 +33,21 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         cityList = findViewById(R.id.city_list);
-        String []cities = {"Edmonton", "Vancouver", "Moscow", "Sydney", "Berlin", "Vienna","Tokyo", "Beijing", "Osaka", "New Delhi" };
+        City []cities = {
+                new City("Edmonton"),
+                new City("Vancouver"),
+                new City("Moscow"),
+                new City("Sydney"),
+                new City("Berlin"),
+                new City("Vienna"),
+                new City("Tokyo"),
+                new City("Beijing"),
+                new City("Osaka"),
+                new City("New Delhi")
+        };
         dataList = new ArrayList<>();
         dataList.addAll(Arrays.asList(cities));
-        cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
+        cityAdapter = new ArrayAdapter<City>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
 
 
@@ -41,4 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    // we get the buttons that are added from the mainactivity first of all
+
+
+
+
+
 }
