@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             cityList.clearChoices();
             selectedPosition =-1;
         });
-        //delete buttpon fincitonality, click on city it gets grayed out and then just clikc on the delete button
+        //delete button function, click on city it gets grayed out and then just clikc on the delete button
         delete_button.setOnClickListener(v -> {
             if (selectedPosition >= 0 && selectedPosition <dataList.size()) {
                 dataList.remove(selectedPosition);
@@ -120,7 +120,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    // we get the buttons that are added from the mainactivity first of all
 
 
 
