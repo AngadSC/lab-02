@@ -14,7 +14,9 @@ https://www.geeksforgeeks.org/android/android-listview-in-java-with-example/
 https://stackoverflow.com/questions/40862154/how-to-create-listview-items-button-in-each-row
 https://developer.android.com/reference/android/app/AlertDialog.Builder
 https://developer.android.com/develop/ui/views/layout/linear
-chatgpt.com
+https://chatgpt.com/
+https://medium.com/@CodyEngel/4-ways-to-implement-onclicklistener-on-android-9b956cbd2928
+
 
 ## Verbal Collaboration
 
