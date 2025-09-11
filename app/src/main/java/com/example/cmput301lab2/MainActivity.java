@@ -2,6 +2,8 @@ package com.example.cmput301lab2;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,8 +24,15 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<City> dataList;
 
     int selectedPosition = -1;
-    Button addCityBut;
-    Button deleteCityBut;
+    Button but_add_city;
+    Button delete_button;
+
+    Button confirm_button;
+
+    EditText city_name;
+    View add_panel;
+
+
 
 
 
@@ -33,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         cityList = findViewById(R.id.city_list);
+        but_add_city= findViewById(R.id.but_add_city);
+        delete_button= findViewById(R.id.delete_button);
+        add_panel=findViewById(R.id.add_panel);
+        edit_city_name  = findViewById(R.id.edit_city_name);
+        confirm_button=findViewById(R.id.confirm_button);
+
+
+
+
         City []cities = {
                 new City("Edmonton"),
                 new City("Vancouver"),
@@ -58,6 +76,21 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        //picks the selected row and highlights it and holds the index of that row, so we can keep
+
+        cityList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectedPosition = position;
+                cityList.setOnItemClickListener(position,true);
+            }
+
+        });
+
+        but_add_city.setOnClickListener(v -> {
+            add_panel.setVisibility(View.VISIBLE);
+
+        });
 
     }
 
