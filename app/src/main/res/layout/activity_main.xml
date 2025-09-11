@@ -21,7 +21,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight ="1"
-            android:text="ADD CITy" />
+            android:text="ADD CITY" />
 
         <Space
             android:layout_width="8dp"
@@ -31,7 +31,7 @@
             android:layout_height="48dp"
             android:id="@+id/delete_button"
             android:layout_weight ="1"
-            android:text="Delete City" />
+            android:text="DELETE CITY" />
     </LinearLayout>
 
 
@@ -55,7 +55,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:hint="City Name"/>
+            android:hint="CITY NAME"/>
         <Space
             android:layout_height="0dp"
             android:layout_width="8dp"/>
