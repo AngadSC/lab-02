@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button confirm_button;
 
-    EditText city_name;
+    EditText edit_name_city;
     View add_panel;
 
 
@@ -45,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
         but_add_city= findViewById(R.id.but_add_city);
         delete_button= findViewById(R.id.delete_button);
         add_panel=findViewById(R.id.add_panel);
-        edit_city_name  = findViewById(R.id.edit_city_name);
+        edit_name_city=findViewById(R.id.edit_city_name);
+
+
         confirm_button=findViewById(R.id.confirm_button);
 
 
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectedPosition = position;
-                cityList.setOnItemClickListener(position,true);
+                cityList.setItemChecked(position,true);
             }
 
         });
