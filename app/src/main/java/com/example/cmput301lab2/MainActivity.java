@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 dataList.remove(selectedPosition);
                 cityAdapter.notifyDataSetChanged();
                 cityList.clearChoices();
-                selectedPosition = -1;
+                selectedPosition = -1; //nothing selected
             }
         });
 
