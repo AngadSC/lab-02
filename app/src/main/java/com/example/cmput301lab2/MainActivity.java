@@ -94,20 +94,30 @@ public class MainActivity extends AppCompatActivity {
             edit_name_city.setText("");
             edit_name_city.requestFocus();
 
-
         });
+        //adding the city after the user clicks confirm
         confirm_button.setOnClickListener(v -> {
-            String name = edit_name_city.getText().toString().trim();
-            if (name.isEmpty()) {
-                edit_name_city.setError("Enter city name");
-                return;
+            String name  = edit_name_city.getText().toString().trim();
+            if (name.isEmpty()) return;
 
-            }
             dataList.add(new City(name));
             cityAdapter.notifyDataSetChanged();
 
-            add_panel
+            add_panel.setVisibility(View.GONE);
+            edit_name_city.setText("");
+            cityList.clearChoices();
+            selectedPosition =-1;
         });
+        //delete buttpon fincitonality, click on city it gets grayed out and then just clikc on the delete button
+        delete_button.setOnClickListener(v -> {
+            if (selectedPosition >= 0 && selectedPosition <dataList.size()) {
+                dataList.remove(selectedPosition);
+                cityAdapter.notifyDataSetChanged();
+                cityList.clearChoices();
+                selectedPosition = -1;
+            }
+        });
+
     }
 
     // we get the buttons that are added from the mainactivity first of all
